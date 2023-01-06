@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 FILELIST=()
 declare -A FILESIZES CHECKSUMS 
@@ -74,8 +74,8 @@ for c in "${!CHECKSUMS[@]}"; do
     fi
 done
 
-echo "Stats:"
-echo "${#FILELIST[@]} files found"
-echo "${#FILESIZES[@]} unique file sizes"
-echo "out of which, ${#CHECKSUMS[@]} unique checksums existed"
-echo "Total: $HAS_REAL_DUPLICATE duplicate files"
+printf "Stats:
+${#FILELIST[@]} files found
+${#FILESIZES[@]} unique file sizes
+Out of which, ${#CHECKSUMS[@]} unique checksums existed
+Total: $HAS_REAL_DUPLICATE duplicate files"
